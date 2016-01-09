@@ -1,4 +1,4 @@
-﻿; pb-osx-globalhotkeys rev.1
+﻿; pb-osx-globalhotkeys rev.2
 ; written by deseven
 ; based on Shardik code from
 ; http://forums.purebasic.com/english/viewtopic.php?p=402973#p402973
@@ -104,8 +104,8 @@ Module globalHK
   carbonKeys("\") = $2A : carbonKeys("|") = $2A
   carbonKeys(",") = $2B : carbonKeys("<") = $2B
   carbonKeys("/") = $2C : carbonKeys("?") = $2C
-  carbonKeys("N") = $2E
-  carbonKeys("M") = $2D
+  carbonKeys("N") = $2D
+  carbonKeys("M") = $2E
   carbonKeys(".") = $2F : carbonKeys(">") = $2F
   carbonKeys("`") = $32 : carbonKeys("~") = $32
   carbonKeys("Return") = $24
@@ -137,6 +137,7 @@ Module globalHK
   carbonKeys("End") = $77
   carbonKeys("PgUp") = $74
   carbonKeys("PgDown") = $79
+  carbonKeys("§") = $0A : carbonKeys("±") = $0A
   
   ; hotkeys list and other stuff
   Global NewList globalHotkeys.globalHotkey()
