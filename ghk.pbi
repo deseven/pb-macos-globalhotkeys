@@ -1,4 +1,4 @@
-﻿; pb-osx-globalhotkeys rev.2
+﻿; pb-osx-globalhotkeys rev.3
 ; written by deseven
 ; based on Shardik code from
 ; http://forums.purebasic.com/english/viewtopic.php?p=402973#p402973
@@ -138,6 +138,7 @@ Module globalHK
   carbonKeys("PgUp") = $74
   carbonKeys("PgDown") = $79
   carbonKeys("§") = $0A : carbonKeys("±") = $0A
+  carbonKeys("Del") = $33
   
   ; hotkeys list and other stuff
   Global NewList globalHotkeys.globalHotkey()
