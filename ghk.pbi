@@ -1,4 +1,4 @@
-﻿; pb-osx-globalhotkeys rev.3
+﻿; pb-osx-globalhotkeys rev.4
 ; written by deseven
 ; based on Shardik code from
 ; http://forums.purebasic.com/english/viewtopic.php?p=402973#p402973
@@ -7,7 +7,7 @@
 
 DeclareModule globalHK
   Declare.b init()
-  Declare.b add(hotkey.s,event.i)
+  Declare.b add(hotkey.s,event.i,evWindow.i = #PB_Ignore,evObject.i = #PB_Ignore,evType.i = #PB_Ignore,evData.i = 0)
   Declare.b remove(hotkey.s,event.i = 0,removeAll.b = #False)
 EndDeclareModule
 
@@ -55,6 +55,10 @@ Module globalHK
   Structure globalHotkey
     hotkey.s
     event.i
+    evWindow.i
+    evObject.i
+    evType.i
+    evData.i
     hotkeyID.EventHotKeyID
     hotkeyRef.i
   EndStructure
@@ -157,7 +161,7 @@ Module globalHK
       ForEach globalHotkeys()
         If globalHotkeys()\hotkeyID\ID = id And globalHotkeys()\hotkeyID\Signature = signature
           ;Debug "id is " + id + ", signature is " + signature
-          PostEvent(globalHotkeys()\event)
+          PostEvent(globalHotkeys()\event,globalHotkeys()\evWindow,globalHotkeys()\evObject,globalHotkeys()\evType,globalHotkeys()\evData)
           Break
         EndIf
       Next
@@ -172,7 +176,7 @@ Module globalHK
     ProcedureReturn #False
   EndProcedure
   
-  Procedure.b add(hotkey.s,event.i)
+  Procedure.b add(hotkey.s,event.i,evWindow.i = #PB_Ignore,evObject.i = #PB_Ignore,evType.i = #PB_Ignore,evData.i = 0)
     Protected modifiers.i,key.s,num.s
     If Not initOK : ProcedureReturn #False : EndIf
     If Len(hotkey) > 1
@@ -201,6 +205,10 @@ Module globalHK
         freeID + 1
         globalHotkeys()\hotkeyID\Signature = Val("$68303030") + globalHotkeys()\hotkeyID\ID
         globalHotkeys()\event = event
+        globalHotkeys()\evWindow = evWindow
+        globalHotkeys()\evObject = evObject
+        globalHotkeys()\evType = evType
+        globalHotkeys()\evData = evData
         If RegisterEventHotKey(carbonKeys(),modifiers,@globalHotkeys()\hotkeyID,GetApplicationEventTarget(),0,@globalHotkeys()\hotkeyRef) = 0
           ProcedureReturn #True
         Else
@@ -225,7 +233,7 @@ Module globalHK
     ProcedureReturn #True
   EndProcedure
 EndModule
-; IDE Options = PureBasic 5.41 LTS (MacOS X - x64)
+; IDE Options = PureBasic 5.42 LTS (MacOS X - x64)
 ; Folding = --
 ; EnableUnicode
 ; EnableXP

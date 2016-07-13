@@ -6,6 +6,7 @@ If Not globalHK::init()
 EndIf
 
 OpenWindow(0,0,0,330,105,"globalHK",#PB_Window_SystemMenu|#PB_Window_ScreenCentered)
+StickyWindow(0,#True)
 
 ; hotkey #1
 TextGadget(#PB_Any,10,14,70,25,"Hotkey #1:")
@@ -102,6 +103,6 @@ Repeat
       MessageRequester("globalHK","You pressed shortcut #3!")
   EndSelect
 Until ev = #PB_Event_CloseWindow
-; IDE Options = PureBasic 5.41 LTS (MacOS X - x64)
+; IDE Options = PureBasic 5.42 LTS (MacOS X - x64)
 ; EnableUnicode
 ; EnableXP
