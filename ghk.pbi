@@ -198,7 +198,7 @@ Module globalHK
             key + Mid(hotkey,i,1)
         EndSelect
       Next
-      If modifiers > 0 And Len(key) And FindMapElement(carbonKeys(),key)
+      If Len(key) And FindMapElement(carbonKeys(),key)
         AddElement(globalHotkeys())
         globalHotkeys()\hotkey = hotkey
         globalHotkeys()\hotkeyID\ID = freeID
