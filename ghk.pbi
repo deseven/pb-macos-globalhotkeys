@@ -143,6 +143,7 @@ Module globalHK
   carbonKeys("PgDown") = $79
   carbonKeys("§") = $0A : carbonKeys("±") = $0A
   carbonKeys("Del") = $33
+  carbonKeys("Clear") = $47
   
   ; hotkeys list and other stuff
   Global NewList globalHotkeys.globalHotkey()
@@ -233,7 +234,3 @@ Module globalHK
     ProcedureReturn #True
   EndProcedure
 EndModule
-; IDE Options = PureBasic 5.42 LTS (MacOS X - x64)
-; Folding = --
-; EnableUnicode
-; EnableXP
