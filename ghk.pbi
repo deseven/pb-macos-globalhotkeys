@@ -1,9 +1,9 @@
-﻿; pb-osx-globalhotkeys rev.4
+﻿; pb-macos-globalhotkeys rev.4
 ; written by deseven
 ; based on Shardik code from
 ; http://forums.purebasic.com/english/viewtopic.php?p=402973#p402973
 ;
-; https://github.com/deseven/pb-osx-globalhotkeys
+; https://github.com/deseven/pb-macos-globalhotkeys
 
 DeclareModule globalHK
   Declare.b init()

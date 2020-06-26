@@ -1,5 +1,5 @@
-# pb-osx-globalhotkeys
-Easy OS X global hotkeys for PureBasic  
+# pb-macos-globalhotkeys
+Easy macOS global hotkeys for PureBasic  
 
 # requirements
 PureBasic 5.20+  
